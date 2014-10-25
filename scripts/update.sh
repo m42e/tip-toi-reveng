@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 
-LANGUAGES="de_de fr_fr nl_nl it_it"
+LANGUAGES="de_de"
 
 for lang in $LANGUAGES ; do 
 
