@@ -1248,6 +1248,10 @@ parseCommands i =
                 [fn] -> Play (fromIntegral i)
                 _    -> Random (fromIntegral (i + n - 1)) (fromIntegral i)
          return (c : cmds, fns ++ filenames)
+    , descP "nothing" $
+      do char ' '
+         (cmds, filenames) <- parseCommands i
+         return (cmds, filenames)
     , descP "Cancel" $
       do char 'C'
          (cmds, filenames) <- parseCommands i
